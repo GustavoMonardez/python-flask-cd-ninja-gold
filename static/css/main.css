@@ -35,4 +35,14 @@ p{
     overflow: scroll;
     height:120px;
     border:1px solid silver;
+    text-align: left;
+    padding:10px;
+}
+
+#red{
+    color:darkred;
+}
+
+#green{
+    color:darkolivegreen;
 }

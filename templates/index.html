@@ -14,36 +14,38 @@
         <div class="form-group row">
             <label for="gold" class="col-sm-2 col-form-label">Your Gold:</label>
             <div class="col-sm-10">
-              <input type="text" readonly class="form-control-plaintext" id="gold" value="0">
+              <input type="text" readonly class="form-control-plaintext" id="gold" value="{{session['gold']}}">
             </div>
         </div>
         <form action="/process_money" method="post">
             <h1>Farm</h1>
             <p>(earns 10-20 golds)</p>
-            <input type="hidden" name="farm" value="farm" />
+            <input type="hidden" name="place" value="farm" />
             <button type="submit" class="btn btn-primary">Find Gold!</button>
         </form><form
          action="/process_money" method="post">
             <h1>Cave</h1>
             <p>(earns 5-10 golds)</p>
-            <input type="hidden" name="cave" value="cave" />
+            <input type="hidden" name="place" value="cave" />
             <button type="submit" class="btn btn-primary">Find Gold!</button>
         </form><form 
         action="/process_money" method="post">
             <h1>House</h1>
             <p>(earns 2-5 golds)</p>
-            <input type="hidden" name="house" value="house" />
+            <input type="hidden" name="place" value="house" />
             <button type="submit" class="btn btn-primary">Find Gold!</button>
         </form><form 
         action="/process_money" method="post">
             <h1>Casino</h1>
             <p>(earns/takes 0-50 golds)</p>
-            <input type="hidden" name="casino" value="casino" />
+            <input type="hidden" name="place" value="casino" />
             <button type="submit" class="btn btn-primary">Find Gold!</button>
         </form>
         <p>Activities:</p>
         <div class="list">
-
+            {% for val in session["activities"]%}  
+                <p id="{{session['class']}}">{{val}}</p>  
+            {% endfor %}     
         </div>
     </div>    
 </body>
